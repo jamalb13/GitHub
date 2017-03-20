@@ -10,8 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var count = 0
+    
+    @IBOutlet weak var numLabel: UILabel!
+    
+    @IBOutlet weak var numButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        numLabel.text = "Hit the button"
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -20,6 +27,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func numButtonHit(_ sender: Any) {
+        count += 1
+        if(count == 1){
+            numLabel.text = "Button has been hit once"
+        }
+        else{
+            numLabel.text = "Button has been hit " + String(count) + " times"
+        }
+    }
 
 }
 
